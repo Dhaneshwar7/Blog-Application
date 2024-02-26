@@ -6,5 +6,16 @@ import Logo from './Logo';
 import Select from './Select';
 import PostCard from './PostCard';
 import Input from './Input';
+import RTE from './RTE';
 
-export { Header, Footer, LogoutBtn, Container, Logo, Select, PostCard, Input };
+export {
+	Header,
+	Footer,
+	LogoutBtn,
+	Container,
+	Logo,
+	Select,
+	PostCard,
+	Input,
+	RTE,
+};
