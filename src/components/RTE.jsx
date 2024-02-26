@@ -1,8 +1,14 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import { Editor } from '@tinymce/tinymce-react';
 import { Controller } from 'react-hook-form';
 
 export default function RTE({ name, control, label, defaultValue = '' }) {
+	const editorRef = useRef(null);
+	const log = () => {
+		if (editorRef.current) {
+			console.log(editorRef.current.getContent());
+		}
+	};
 	return (
 		<div className="w-full">
 			{label && <label className="inline-block mb-1 pl-1">{label}</label>}
@@ -14,6 +20,7 @@ export default function RTE({ name, control, label, defaultValue = '' }) {
 					<Editor
 						apiKey="sx3wblmdts4yam05e41zs742pdmh30dpsr14242s13z05e7f"
 						initialValue={defaultValue}
+						onInit={(evt, editor) => (editorRef.current = editor)}
 						init={{
 							initialValue: defaultValue,
 							height: 500,
