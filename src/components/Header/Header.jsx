@@ -1,14 +1,12 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { LogoutBtn, Logo, Container } from '../index';
 import { useSelector } from 'react-redux';
 import { Link, useNavigate } from 'react-router-dom';
 
 const Header = () => {
-	const authStatus = useSelector(state => {
-		state.auth.status;
-	});
+	const authStatus = useSelector(state => state.auth.status);
 	const navigate = useNavigate();
-	const NavItems = [
+	const navItems = [
 		{ name: 'Home', slug: '/', active: true },
 		{ name: 'Login', slug: '/login', active: !authStatus },
 		{ name: 'Signup', slug: '/signup', active: !authStatus },
@@ -25,7 +23,7 @@ const Header = () => {
 						</Link>
 					</div>
 					<ul className="flex ml-auto">
-						{NavItems.map(item =>
+						{navItems.map(item =>
 							item.active ? (
 								<li key={item.name}>
 									<button

@@ -42,10 +42,10 @@ const Signup = () => {
 				<p className="mt-2 text-center text-base text-black/60">
 					Already have an Account ?&nbsp;
 					<Link
-						to="/signup"
+						to="/login"
 						className="font-medium text-primary transition-all duration-200 hover:underline"
 					>
-						Sign Up
+						Login
 					</Link>
 				</p>
 				{error && <p className="text-red-600 mt-8 text-center">{error}</p>}
@@ -54,7 +54,7 @@ const Signup = () => {
 						<Input
 							label="Name: "
 							placeholder="Enter your Full Name"
-							type="email"
+							type="name"
 							{...register('name', {
 								required: true,
 							})}
@@ -65,11 +65,6 @@ const Signup = () => {
 							type="email"
 							{...register('email', {
 								required: true,
-								validate: {
-									matchPatern: value =>
-										/^\w+([.-]?\w+)*@w+([.-]?\w+)*(\.\w{2,3})+$/.test(value) ||
-										'Email Address must be a valid address',
-								},
 							})}
 						/>
 						<Input

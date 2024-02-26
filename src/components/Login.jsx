@@ -58,14 +58,15 @@ const Login = () => {
 								required: true,
 								validate: {
 									matchPatern: value =>
-										/^\w+([.-]?\w+)*@w+([.-]?\w+)*(\.\w{2,3})+$/.test(value) ||
-										'Email Address must be a valid address',
+										/^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/.test(value) ||
+										'Email address must be a valid address',
 								},
 							})}
 						/>
 						<Input
 							label="Password: "
 							type="password"
+							autocomplete="current-password"
 							placeholder="Enter your Password"
 							{...register('password', {
 								required: true,
