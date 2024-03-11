@@ -66,7 +66,7 @@ const Login = () => {
 						<Input
 							label="Password: "
 							type="password"
-							autocomplete="current-password"
+							autoComplete="current-password"
 							placeholder="Enter your Password"
 							{...register('password', {
 								required: true,
